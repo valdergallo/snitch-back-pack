@@ -149,6 +149,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost:3000',
+    'websnitcher.herokuapp.com'
 )
 
 AUTH_PASSWORD_VALIDATORS = []
