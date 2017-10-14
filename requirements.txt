@@ -9,4 +9,5 @@ flake8==3.4.1
 djangorestframework==3.7.0
 django==1.11.6
 django-cors-headers==2.1.0
+dj-database-url==0.4.2
 chance==0.104
