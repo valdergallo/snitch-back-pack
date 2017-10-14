@@ -26,6 +26,9 @@ TO use your token
 | drf_create_token | create your token without POST em API |
 | runserver        | run developer server                  |
 | shell            | run python prompt                     |
+| pytest           | run the test suit                     |
+| ptw              | run the test watchdog                 |
+
 
 ### to start a developer
 
@@ -35,3 +38,5 @@ Using virtualenv
     >>> source .env/bin/activate
     >>> pip install -r requirements.txt
 ```
+
+
