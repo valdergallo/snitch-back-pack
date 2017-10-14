@@ -85,8 +85,10 @@ CSRF_TRUSTED_ORIGINS = ['localhost', '127.0.0.1']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/snitch.db',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6irdi401fip0m',
+        'USER': 'bfdywtnzjeaejb',
+        'PASSWORD': 'b828d3ae95a703cb6e07f716c251dde181426a64f8e14142c3a11219a22c11cf',
     }
 }
 
