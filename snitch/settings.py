@@ -86,9 +86,12 @@ CSRF_TRUSTED_ORIGINS = ['localhost', '127.0.0.1']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'PORT': 5432,
+        'HOST': 'ec2-54-225-113-161.compute-1.amazonaws.com',
         'NAME': 'd6irdi401fip0m',
         'USER': 'bfdywtnzjeaejb',
         'PASSWORD': 'b828d3ae95a703cb6e07f716c251dde181426a64f8e14142c3a11219a22c11cf',
+        'URI': 'postgres://bfdywtnzjeaejb:b828d3ae95a703cb6e07f716c251dde181426a64f8e14142c3a11219a22c11cf@ec2-54-225-113-161.compute-1.amazonaws.com:5432/d6irdi401fip0m'
     }
 }
 
@@ -156,7 +159,7 @@ if not IS_PRODUCT:
 
 if os.environ.get('SERVER_NAME') == "HEROKU":
     import dj_database_url
-    db_from_env = dj_database_url.config()
+    db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
 
     # Simplified static file serving.
