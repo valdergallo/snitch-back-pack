@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+DATABASE_URL = os.environ.get('DATABASE_URL')
+PRODUCTION = os.environ.get('PRODUCTION')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -86,7 +87,7 @@ CSRF_TRUSTED_ORIGINS = ['localhost', '127.0.0.1']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': DATABASE_URL,
     }
 }
 
@@ -146,7 +147,7 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
 )
 
-if not os.environ.get('PRODUCTION'):
+if not PRODUCTION:
     AUTH_PASSWORD_VALIDATORS = []
     PASSWORD_HASHERS = [
         'django.contrib.auth.hashers.MD5PasswordHasher',
