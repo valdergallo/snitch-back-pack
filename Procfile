@@ -1,1 +1,1 @@
-web: gunicorn snitcher.snitch.wsgi --log-file -
+web: gunicorn snitch.wsgi --log-file -
