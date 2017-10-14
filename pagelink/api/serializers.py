@@ -1,7 +1,6 @@
 # coding=utf-8
 from rest_framework import serializers
 from pagelink.models import PageLink, PageLinkTracker
-from django.core.exceptions import PermissionDenied
 
 
 class PageLinkSerializer(serializers.ModelSerializer):
@@ -17,4 +16,3 @@ class PageLinkTrackSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return PageLinkTracker.objects.create(**validated_data)
-    

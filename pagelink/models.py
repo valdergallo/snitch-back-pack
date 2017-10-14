@@ -4,6 +4,7 @@ from django.contrib.auth.models import Permission, User, ContentType
 from django.utils.text import slugify
 from rest_framework.authtoken.models import Token
 
+
 class PageLinkManager(models.Manager):
     """
     Default filter to be used in Links
@@ -32,6 +33,9 @@ class PageLink(models.Model):
     permissions = models.ManyToManyField(Permission)
 
     objects = PageLinkManager()
+
+    class Meta:
+        ordering = ['id']
 
     def __str__(self):
         return self.url
@@ -65,4 +69,3 @@ class PageLinkTracker(models.Model):
     @property
     def get_token(self):
         return Token.objects.get(user=self.user)
-
