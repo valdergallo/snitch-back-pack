@@ -151,11 +151,10 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
 )
 
-if not IS_PRODUCT:
-    AUTH_PASSWORD_VALIDATORS = []
-    PASSWORD_HASHERS = [
-        'django.contrib.auth.hashers.MD5PasswordHasher',
-    ]
+AUTH_PASSWORD_VALIDATORS = []
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+]
 
 if os.environ.get('SERVER_NAME') == "HEROKU":
     import dj_database_url
